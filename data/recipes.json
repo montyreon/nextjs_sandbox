@@ -18,7 +18,7 @@
     },
     {
         "id": "1",
-        "name": "Adobo",
+        "name": "Adobong Manok",
         "ingredients": [
             "1 kg chicken",
             "1/2 cup soy sauce",
@@ -116,23 +116,29 @@
     },
     {
         "id": "5",
-        "name": "Leche Flan",
+        "name": "Ginisang Monggo",
         "ingredients": [
-            "10 egg yolks",
-            "1 can condensed milk",
-            "1 can evaporated milk",
-            "1 cup sugar",
-            "1 tsp vanilla extract"
+            "1 cup mung beans (monggo)",
+            "6 cups water",
+            "200g pork, sliced",
+            "1 cup spinach or malunggay leaves",
+            "1 tomato, chopped",
+            "1 onion, chopped",
+            "3 cloves garlic, minced",
+            "2 tbsp fish sauce",
+            "Salt and pepper to taste"
         ],
         "instructions": [
-            "Caramelize sugar in a llanera (mold).",
-            "Mix egg yolks, condensed milk, evaporated milk, and vanilla.",
-            "Pour mixture into the mold over caramel.",
-            "Steam for 30-40 minutes.",
-            "Cool, then invert onto a plate to serve."
+            "Boil mung beans in water until soft. Set aside.",
+            "Sauté garlic, onion, and tomato in a pot.",
+            "Add pork and cook until browned.",
+            "Pour in cooked mung beans with liquid.",
+            "Simmer for 10-15 minutes. Add fish sauce, salt, and pepper.",
+            "Add spinach or malunggay leaves and cook for 2 minutes.",
+            "Serve hot with rice."
         ],
         "cookingTime": 60,
-        "image": "https://example.com/images/leche-flan.jpg"
+        "image": "https://example.com/images/ginisang-monggo.jpg"
     },
     {
         "id": "6",
@@ -376,27 +382,30 @@
     },
     {
         "id": "16",
-        "name": "Ginataang Bilo-Bilo",
+        "name": "Ginataang Hipon",
         "ingredients": [
-            "1 cup glutinous rice balls",
-            "1 cup sweet potato, cubed",
-            "1 cup saba banana, sliced",
-            "1 cup jackfruit, sliced",
-            "1/2 cup tapioca pearls",
+            "500g shrimp, cleaned",
             "2 cups coconut milk",
             "1 cup coconut cream",
-            "1 cup sugar"
+            "1 onion, chopped",
+            "3 cloves garlic, minced",
+            "1 thumb ginger, sliced",
+            "2 green chilies, sliced",
+            "1 bunch sitaw (string beans), cut into 2-inch pieces",
+            "1 eggplant, sliced",
+            "Salt and pepper to taste"
         ],
         "instructions": [
-            "Boil tapioca pearls until translucent.",
-            "In a pot, combine coconut milk, sweet potato, and bananas.",
-            "Add glutinous rice balls and jackfruit.",
-            "Simmer until everything is cooked.",
-            "Add coconut cream and sugar, cook until thick.",
-            "Serve warm."
+            "Sauté garlic, onion, and ginger in a pan.",
+            "Add shrimp and cook until it turns pink.",
+            "Pour in coconut milk and bring to a simmer.",
+            "Add sitaw, eggplant, and green chilies. Cook until vegetables are tender.",
+            "Pour in coconut cream and simmer until sauce thickens.",
+            "Season with salt and pepper.",
+            "Serve hot with rice."
         ],
-        "cookingTime": 45,
-        "image": "https://example.com/images/ginataang-bilo-bilo.jpg"
+        "cookingTime": 35,
+        "image": "https://example.com/images/ginataang-hipon.jpg"
     },
     {
         "id": "17",
@@ -447,46 +456,52 @@
     },
     {
         "id": "19",
-        "name": "Halo-Halo",
+        "name": "Bistek Tagalog",
         "ingredients": [
-            "1 cup shaved ice",
-            "1/4 cup sweetened beans",
-            "1/4 cup nata de coco",
-            "1/4 cup jackfruit, sliced",
-            "1/4 cup sweetened banana",
-            "1/4 cup leche flan, cubed",
-            "1 scoop ube ice cream",
-            "1/4 cup evaporated milk"
+            "500g beef sirloin, thinly sliced",
+            "1/4 cup soy sauce",
+            "1/4 cup calamansi juice (or lemon juice)",
+            "2 onions, sliced into rings",
+            "3 cloves garlic, minced",
+            "1 tsp ground black pepper",
+            "2 tbsp cooking oil",
+            "Salt to taste"
         ],
         "instructions": [
-            "Layer sweetened beans, nata de coco, jackfruit, and banana in a tall glass.",
-            "Add shaved ice on top.",
-            "Pour evaporated milk over ice.",
-            "Top with leche flan and ube ice cream.",
-            "Serve immediately."
+            "Marinate beef in soy sauce, calamansi juice, garlic, and pepper for at least 30 minutes.",
+            "Heat oil in a pan and fry onion rings until soft. Set aside.",
+            "In the same pan, cook marinated beef until browned.",
+            "Pour in the marinade and simmer until beef is tender.",
+            "Season with salt if needed.",
+            "Top with cooked onion rings before serving."
         ],
-        "cookingTime": 15,
-        "image": "https://example.com/images/halo-halo.jpg"
+        "cookingTime": 40,
+        "image": "https://example.com/images/bistek-tagalog.jpg"
     },
     {
         "id": "20",
-        "name": "Puto",
+        "name": "Tinola",
         "ingredients": [
-            "2 cups rice flour",
-            "1 cup sugar",
-            "1 tbsp baking powder",
-            "1 1/2 cups coconut milk",
-            "1/2 cup water",
-            "1/4 cup grated cheese"
+            "1 kg chicken, cut into serving pieces",
+            "1 thumb ginger, sliced",
+            "1 onion, chopped",
+            "5 cloves garlic, minced",
+            "1 green papaya, sliced",
+            "1 bunch chili leaves (or malunggay leaves)",
+            "6 cups water",
+            "2 tbsp fish sauce",
+            "Salt and pepper to taste"
         ],
         "instructions": [
-            "Mix rice flour, sugar, and baking powder.",
-            "Add coconut milk and water, mix until smooth.",
-            "Pour into molds, top with cheese.",
-            "Steam for 20 minutes.",
-            "Serve warm."
+            "Sauté garlic, onion, and ginger in a pot.",
+            "Add chicken pieces and cook until lightly browned.",
+            "Pour in fish sauce and water, bring to a boil.",
+            "Lower heat and simmer until chicken is tender.",
+            "Add green papaya and cook until tender.",
+            "Add chili leaves and simmer for 2 minutes.",
+            "Season with salt and pepper. Serve hot."
         ],
-        "cookingTime": 30,
-        "image": "https://example.com/images/puto.jpg"
+        "cookingTime": 45,
+        "image": "https://example.com/images/tinola.jpg"
     }
 ]
