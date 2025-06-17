@@ -3,7 +3,7 @@ import type { Recipe } from '../types/recipe';
 // component that displays the recipe as a card preview
 export default function RecipeCard({ recipe }: { recipe: Recipe }) {
     return (
-        <div className="max-w-sm rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300">
+        <div className="max-w-sm rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-200">
             <img
             className="w-full h-48 object-cover"
             src="/recipes/placeholder.jpg" // replace soon

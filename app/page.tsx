@@ -16,9 +16,9 @@ export default async function Home() {
   const recipes = await res.json() as Recipe[];
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <h1 className="text-4xl font-bold">NextJS Practice Recipe App</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full bg-green-100">
+    <main className="flex min-h-screen flex-col items-center p-24 gap-8">
+      <h1 className="text-[3rem] font-bold text-white drop-shadow-lg">NextJS Practice Recipe App</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
         {/* map the fetched recipes as cards */
           recipes.map((recipe) => (
         <RecipeCard key={recipe.id} recipe={recipe} />
