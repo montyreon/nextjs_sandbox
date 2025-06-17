@@ -1,4 +1,4 @@
-export interface recipe {
+export interface Recipe {
     id: string
     name: string
     ingredients: string[]
@@ -7,7 +7,7 @@ export interface recipe {
     image: string
 }
 
-export const sampleRecipes: recipe[] = [
+export const sampleRecipes: Recipe[] = [
     {
         id: "1",
         name: "Adobo",
