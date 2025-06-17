@@ -1,5 +1,22 @@
 [
     {
+        "id": "0",
+        "name": "Plain Rice",
+        "ingredients": [
+            "2 cups rice",
+            "2 1/2 cups water"
+        ],
+        "instructions": [
+            "Rinse rice until water runs clear.",
+            "Combine rice and water in a pot.",
+            "Bring to a boil, then reduce heat to low.",
+            "Cover and simmer for 15-20 minutes until water is absorbed.",
+            "Let stand covered for 5 minutes before serving."
+        ],
+        "cookingTime": 25,
+        "image": "https://example.com/images/plain-rice.jpg"
+    },
+    {
         "id": "1",
         "name": "Adobo",
         "ingredients": [
