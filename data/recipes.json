@@ -116,5 +116,360 @@
         ],
         "cookingTime": 60,
         "image": "https://example.com/images/leche-flan.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Laing",
+        "ingredients": [
+            "2 cups dried taro leaves",
+            "400ml coconut milk",
+            "200ml coconut cream",
+            "200g pork belly, sliced",
+            "2 tbsp shrimp paste",
+            "5 cloves garlic, minced",
+            "1 onion, chopped",
+            "2 red chilies, sliced"
+        ],
+        "instructions": [
+            "Sauté garlic, onion, and pork until browned.",
+            "Add shrimp paste and mix.",
+            "Pour in coconut milk and bring to a boil.",
+            "Add taro leaves and simmer until tender.",
+            "Add coconut cream and chilies, cook until thick.",
+            "Serve hot with rice."
+        ],
+        "cookingTime": 60,
+        "image": "https://example.com/images/laing.jpg"
+    },
+    {
+        "id": "7",
+        "name": "Bicol Express",
+        "ingredients": [
+            "500g pork belly, sliced",
+            "2 cups coconut milk",
+            "1 cup coconut cream",
+            "5 cloves garlic, minced",
+            "1 onion, chopped",
+            "5 green chilies, sliced",
+            "2 tbsp shrimp paste"
+        ],
+        "instructions": [
+            "Sauté garlic and onion, add pork and cook until browned.",
+            "Add shrimp paste and mix.",
+            "Pour in coconut milk and simmer until pork is tender.",
+            "Add chilies and coconut cream, cook until thick.",
+            "Serve hot with rice."
+        ],
+        "cookingTime": 50,
+        "image": "https://example.com/images/bicol-express.jpg"
+    },
+    {
+        "id": "8",
+        "name": "Chicken Inasal",
+        "ingredients": [
+            "1 kg chicken, cut into serving pieces",
+            "1/2 cup vinegar",
+            "1/4 cup calamansi juice",
+            "1/4 cup soy sauce",
+            "6 cloves garlic, minced",
+            "1 thumb ginger, grated",
+            "2 stalks lemongrass, pounded",
+            "1 tsp salt",
+            "1 tsp pepper"
+        ],
+        "instructions": [
+            "Mix vinegar, calamansi juice, soy sauce, garlic, ginger, lemongrass, salt, and pepper.",
+            "Marinate chicken for at least 1 hour.",
+            "Grill chicken over hot coals, basting with marinade.",
+            "Serve with rice and dipping sauce."
+        ],
+        "cookingTime": 70,
+        "image": "https://example.com/images/chicken-inasal.jpg"
+    },
+    {
+        "id": "9",
+        "name": "Paksiw na Bangus",
+        "ingredients": [
+            "1 kg bangus (milkfish), sliced",
+            "1 cup vinegar",
+            "1 cup water",
+            "5 cloves garlic, crushed",
+            "1 onion, sliced",
+            "1 thumb ginger, sliced",
+            "2 eggplants, sliced",
+            "2 pcs long green chili",
+            "1 tsp salt",
+            "1/2 tsp peppercorns"
+        ],
+        "instructions": [
+            "Arrange bangus, eggplant, garlic, onion, and ginger in a pot.",
+            "Add vinegar, water, salt, peppercorns, and chili.",
+            "Bring to a boil, then simmer until fish is cooked.",
+            "Serve hot with rice."
+        ],
+        "cookingTime": 40,
+        "image": "https://example.com/images/paksiw-na-bangus.jpg"
+    },
+    {
+        "id": "10",
+        "name": "Menudo",
+        "ingredients": [
+            "500g pork, diced",
+            "100g pork liver, diced",
+            "2 potatoes, diced",
+            "2 carrots, diced",
+            "1 bell pepper, diced",
+            "1 cup tomato sauce",
+            "1 onion, chopped",
+            "3 cloves garlic, minced",
+            "1/2 cup green peas",
+            "2 tbsp soy sauce"
+        ],
+        "instructions": [
+            "Sauté garlic and onion, add pork and cook until browned.",
+            "Add liver and cook for 2 minutes.",
+            "Add tomato sauce and soy sauce, simmer for 10 minutes.",
+            "Add potatoes, carrots, and peas, cook until tender.",
+            "Add bell pepper, simmer for 2 minutes.",
+            "Serve hot with rice."
+        ],
+        "cookingTime": 50,
+        "image": "https://example.com/images/menudo.jpg"
+    },
+    {
+        "id": "11",
+        "name": "Pinakbet",
+        "ingredients": [
+            "300g pork belly, sliced",
+            "1 cup squash, cubed",
+            "1 cup eggplant, sliced",
+            "1 cup bitter melon, sliced",
+            "1 cup string beans, cut",
+            "1 tomato, chopped",
+            "1 onion, chopped",
+            "2 tbsp shrimp paste",
+            "2 cloves garlic, minced"
+        ],
+        "instructions": [
+            "Sauté garlic, onion, and pork until browned.",
+            "Add shrimp paste and tomato, cook for 2 minutes.",
+            "Add vegetables and stir-fry.",
+            "Add a little water, cover and simmer until vegetables are tender.",
+            "Serve hot."
+        ],
+        "cookingTime": 45,
+        "image": "https://example.com/images/pinakbet.jpg"
+    },
+    {
+        "id": "12",
+        "name": "Pochero",
+        "ingredients": [
+            "500g beef shank",
+            "2 saba bananas, sliced",
+            "1 potato, cubed",
+            "1 carrot, sliced",
+            "1/2 cabbage, quartered",
+            "1 bunch pechay",
+            "1 onion, chopped",
+            "3 cloves garlic, minced",
+            "1 can tomato sauce",
+            "1 chorizo, sliced"
+        ],
+        "instructions": [
+            "Boil beef shank until tender.",
+            "Sauté garlic and onion, add chorizo and cook.",
+            "Add tomato sauce and beef, simmer for 10 minutes.",
+            "Add potatoes, carrots, and bananas, cook until tender.",
+            "Add cabbage and pechay, simmer for 2 minutes.",
+            "Serve hot."
+        ],
+        "cookingTime": 90,
+        "image": "https://example.com/images/pochero.jpg"
+    },
+    {
+        "id": "13",
+        "name": "Tortang Talong",
+        "ingredients": [
+            "4 eggplants",
+            "4 eggs",
+            "1/2 cup ground pork (optional)",
+            "1 onion, chopped",
+            "2 cloves garlic, minced",
+            "Salt and pepper to taste",
+            "Oil for frying"
+        ],
+        "instructions": [
+            "Grill eggplants until skin is charred, peel skin.",
+            "Flatten eggplants with a fork.",
+            "Sauté garlic, onion, and pork if using.",
+            "Beat eggs, season with salt and pepper.",
+            "Dip eggplants in egg mixture, fry until golden.",
+            "Serve hot with rice."
+        ],
+        "cookingTime": 35,
+        "image": "https://example.com/images/tortang-talong.jpg"
+    },
+    {
+        "id": "14",
+        "name": "Arroz Caldo",
+        "ingredients": [
+            "1 cup glutinous rice",
+            "500g chicken, cut into pieces",
+            "1 thumb ginger, sliced",
+            "1 onion, chopped",
+            "5 cloves garlic, minced",
+            "6 cups chicken broth",
+            "2 tbsp fish sauce",
+            "Salt and pepper to taste",
+            "Calamansi and fried garlic for garnish"
+        ],
+        "instructions": [
+            "Sauté garlic, onion, and ginger.",
+            "Add chicken and cook until lightly browned.",
+            "Add rice and fish sauce, stir.",
+            "Pour in chicken broth, simmer until rice is soft.",
+            "Season with salt and pepper.",
+            "Serve with calamansi and fried garlic."
+        ],
+        "cookingTime": 50,
+        "image": "https://example.com/images/arroz-caldo.jpg"
+    },
+    {
+        "id": "15",
+        "name": "Lumpiang Shanghai",
+        "ingredients": [
+            "500g ground pork",
+            "1 carrot, grated",
+            "1 onion, chopped",
+            "3 cloves garlic, minced",
+            "1 egg",
+            "2 tbsp soy sauce",
+            "Salt and pepper to taste",
+            "Lumpia wrappers",
+            "Oil for frying"
+        ],
+        "instructions": [
+            "Mix pork, carrot, onion, garlic, egg, soy sauce, salt, and pepper.",
+            "Wrap mixture in lumpia wrappers.",
+            "Fry until golden brown.",
+            "Serve with sweet chili sauce."
+        ],
+        "cookingTime": 40,
+        "image": "https://example.com/images/lumpiang-shanghai.jpg"
+    },
+    {
+        "id": "16",
+        "name": "Ginataang Bilo-Bilo",
+        "ingredients": [
+            "1 cup glutinous rice balls",
+            "1 cup sweet potato, cubed",
+            "1 cup saba banana, sliced",
+            "1 cup jackfruit, sliced",
+            "1/2 cup tapioca pearls",
+            "2 cups coconut milk",
+            "1 cup coconut cream",
+            "1 cup sugar"
+        ],
+        "instructions": [
+            "Boil tapioca pearls until translucent.",
+            "In a pot, combine coconut milk, sweet potato, and bananas.",
+            "Add glutinous rice balls and jackfruit.",
+            "Simmer until everything is cooked.",
+            "Add coconut cream and sugar, cook until thick.",
+            "Serve warm."
+        ],
+        "cookingTime": 45,
+        "image": "https://example.com/images/ginataang-bilo-bilo.jpg"
+    },
+    {
+        "id": "17",
+        "name": "Bulalo",
+        "ingredients": [
+            "1 kg beef shank with bone marrow",
+            "1 corn on the cob, sliced",
+            "1/2 cabbage, quartered",
+            "1 bunch pechay",
+            "1 onion, quartered",
+            "5 cloves garlic, crushed",
+            "2 liters water",
+            "Salt and pepper to taste"
+        ],
+        "instructions": [
+            "Boil beef shank in water until tender.",
+            "Add onion, garlic, and corn, simmer for 20 minutes.",
+            "Add cabbage and pechay, cook for 5 minutes.",
+            "Season with salt and pepper.",
+            "Serve hot."
+        ],
+        "cookingTime": 120,
+        "image": "https://example.com/images/bulalo.jpg"
+    },
+    {
+        "id": "18",
+        "name": "Dinuguan",
+        "ingredients": [
+            "500g pork belly, diced",
+            "250g pork blood",
+            "1 cup vinegar",
+            "1 onion, chopped",
+            "5 cloves garlic, minced",
+            "2 green chilies, sliced",
+            "1 cup water",
+            "Salt and pepper to taste"
+        ],
+        "instructions": [
+            "Sauté garlic and onion, add pork and cook until browned.",
+            "Add vinegar and simmer for 5 minutes.",
+            "Add pork blood and water, stir continuously.",
+            "Add chilies, season with salt and pepper.",
+            "Simmer until thick.",
+            "Serve hot with puto."
+        ],
+        "cookingTime": 60,
+        "image": "https://example.com/images/dinuguan.jpg"
+    },
+    {
+        "id": "19",
+        "name": "Halo-Halo",
+        "ingredients": [
+            "1 cup shaved ice",
+            "1/4 cup sweetened beans",
+            "1/4 cup nata de coco",
+            "1/4 cup jackfruit, sliced",
+            "1/4 cup sweetened banana",
+            "1/4 cup leche flan, cubed",
+            "1 scoop ube ice cream",
+            "1/4 cup evaporated milk"
+        ],
+        "instructions": [
+            "Layer sweetened beans, nata de coco, jackfruit, and banana in a tall glass.",
+            "Add shaved ice on top.",
+            "Pour evaporated milk over ice.",
+            "Top with leche flan and ube ice cream.",
+            "Serve immediately."
+        ],
+        "cookingTime": 15,
+        "image": "https://example.com/images/halo-halo.jpg"
+    },
+    {
+        "id": "20",
+        "name": "Puto",
+        "ingredients": [
+            "2 cups rice flour",
+            "1 cup sugar",
+            "1 tbsp baking powder",
+            "1 1/2 cups coconut milk",
+            "1/2 cup water",
+            "1/4 cup grated cheese"
+        ],
+        "instructions": [
+            "Mix rice flour, sugar, and baking powder.",
+            "Add coconut milk and water, mix until smooth.",
+            "Pour into molds, top with cheese.",
+            "Steam for 20 minutes.",
+            "Serve warm."
+        ],
+        "cookingTime": 30,
+        "image": "https://example.com/images/puto.jpg"
     }
 ]

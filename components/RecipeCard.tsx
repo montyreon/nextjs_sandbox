@@ -6,7 +6,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
         <div className="max-w-sm rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300">
             <img
             className="w-full h-48 object-cover"
-            src={recipe.image}
+            src="/recipes/placeholder.jpg" // replace soon
             alt={recipe.name}
             />
             <div className="p-4">
