@@ -23,10 +23,7 @@ export default async function Home() {
     <main className="relative flex flex-col items-center min-h-screen">
       <AuroraBackground>
         <h1
-          className={cn(
-            `font-bold text-center text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] drop-shadow-xl drop-shadow-black`,
-            "bg-[linear-gradient(120deg,#ffffff33_0%,#ffffffcc_50%,#ffffff33_100%)] bg-[length:200%_100%] bg-clip-text text-white animate-shimmer "
-          )}
+          className="text-4xl font-bold text-center text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg"
         >
           Ma, Anong Ulam?
         </h1>
