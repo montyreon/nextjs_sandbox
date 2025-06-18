@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Recipe } from '../types/recipe';
 import { Timer } from 'lucide-react';
 
@@ -18,18 +19,21 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
             }}
             href={`/recipes/${recipe.id}`}
         >
-            <div className="max-w-sm rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-200 hover:cursor-pointer">
-                <img
-                    className="w-full h-48 object-cover"
-                    src="/recipes/placeholder.jpg" // replace soon
+            <div className="max-w-sm overflow-hidden transition-all duration-200 shadow-lg rounded-xl hover:shadow-yellow-200 hover:bg-white bg-white/80 hover:shadow-2xl hover:-translate-y-1 hover:cursor-pointer">
+                <Image
+                    className="object-cover w-full h-48"
+                    src={recipe.image || '/recipes/placeholder.jpg'}
                     alt={recipe.name}
+                    width={400}
+                    height={192}
+                    priority
                 />
                 <div className="p-4">
-                    <h2 className="text-xl font-semibold mb-2 text-gray-800">{recipe.name}</h2>
-                    <div className="flex items-center text-gray-600 text-sm">
+                    <h2 className="mb-2 text-xl font-semibold text-gray-800">{recipe.name}</h2>
+                    <div className="flex items-center text-sm text-gray-600">
                         <Timer size={20}/>
                         <div className='w-1'/>
-                        <div>{recipe.cookingTime} mins</div>
+                        <div className='!font-serif'>{recipe.cookingTime} mins</div>
                     </div>
                 </div>
             </div>

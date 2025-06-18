@@ -1,5 +1,12 @@
 import RecipeCard from "@/components/RecipeCard";
 import { Recipe } from "@/types/recipe";
+import { Homemade_Apple } from 'next/font/google';
+
+const homemade = Homemade_Apple({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default async function Home() {
   // fetch the recipes from the recipes api route
@@ -17,11 +24,14 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-24 gap-8">
-      <h1 className="text-[3rem] font-bold text-white drop-shadow-lg">Ma, Anong Ulam?</h1>
+
+      <h1 className={`${homemade.className} font-bold text-[5rem] text-white drop-shadow-xl drop-shadow-black`}>
+        Ma, Anong Ulam?
+      </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-12 w-max max-w-[95%]">
         {/* map the fetched recipes as cards */
           recipes.map((recipe) => (
-        <RecipeCard key={recipe.id} recipe={recipe} />
+            <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
       </div>
     </main>

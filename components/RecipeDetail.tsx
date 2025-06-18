@@ -16,7 +16,7 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }) => (
     <div
         style={{
             fontFamily: 'sans-serif',
-            transform: `rotate(${Math.random() * 1.5}deg)`,
+            transform: `rotate(${Math.random() * 2}deg)`,
             backgroundImage: 'url("/paper.webp")',
             backgroundRepeat: 'repeat',
             backgroundPosition: 'center'
@@ -26,11 +26,13 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }) => (
         <h1 className={`${homemade.className} text-[2rem] text-center font-bold text-slate-800`}>
             {recipe.name}
         </h1>
-        <div className="w-full max-w-2xl p-6 ">
-            <img
+        <div className="w-full max-w-2xl p-6 font-serif">
+            <Image
                 src={recipe.image || "/recipes/placeholder.jpg"}
                 alt={recipe.name}
-                className="object-cover w-full h-64 mb-4"
+                width={400}
+                height={192}
+                className="object-cover w-full h-64 mb-4 rounded-lg"
             />
             <p className="mb-4 text-gray-700">
                 <strong>Cooking Time:</strong> {recipe.cookingTime} minutes
