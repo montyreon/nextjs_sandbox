@@ -14,7 +14,7 @@
             "Let stand covered for 5 minutes before serving."
         ],
         "cookingTime": 25,
-        "image": "https://example.com/images/plain-rice.jpg"
+        "image": "/recipes/placeholder.jpeg"
     },
     {
         "id": "1",
@@ -37,7 +37,7 @@
             "Serve hot with rice."
         ],
         "cookingTime": 60,
-        "image": "https://example.com/images/adobo.jpg"
+        "image": "/recipes/adobo.jpeg"
     },
     {
         "id": "2",
@@ -60,7 +60,7 @@
             "Simmer for 2 minutes and serve hot."
         ],
         "cookingTime": 75,
-        "image": "https://example.com/images/sinigang.jpg"
+        "image": "/recipes/sinigang.jpeg"
     },
     {
         "id": "3",
@@ -86,7 +86,7 @@
             "Serve hot."
         ],
         "cookingTime": 40,
-        "image": "https://example.com/images/pancit-canton.jpg"
+        "image": "/recipes/pancit.jpeg"
     },
     {
         "id": "4",
@@ -112,7 +112,7 @@
             "Serve with bagoong (shrimp paste)."
         ],
         "cookingTime": 120,
-        "image": "https://example.com/images/kare-kare.jpg"
+        "image": "/recipes/karekare.jpeg"
     },
     {
         "id": "5",
@@ -138,7 +138,7 @@
             "Serve hot with rice."
         ],
         "cookingTime": 60,
-        "image": "https://example.com/images/ginisang-monggo.jpg"
+        "image": "/recipes/ginisang monggo.jpeg"
     },
     {
         "id": "6",
@@ -162,7 +162,7 @@
             "Serve hot with rice."
         ],
         "cookingTime": 60,
-        "image": "https://example.com/images/laing.jpg"
+        "image": "/recipes/laing.jpeg"
     },
     {
         "id": "7",
@@ -184,7 +184,7 @@
             "Serve hot with rice."
         ],
         "cookingTime": 50,
-        "image": "https://example.com/images/bicol-express.jpg"
+        "image": "/recipes/bicolexpress.jpeg"
     },
     {
         "id": "8",
@@ -207,7 +207,7 @@
             "Serve with rice and dipping sauce."
         ],
         "cookingTime": 70,
-        "image": "https://example.com/images/chicken-inasal.jpg"
+        "image": "/recipes/chickeninasal.jpeg"
     },
     {
         "id": "9",
@@ -231,7 +231,7 @@
             "Serve hot with rice."
         ],
         "cookingTime": 40,
-        "image": "https://example.com/images/paksiw-na-bangus.jpg"
+        "image": "/recipes/paksiwnabangus.jpeg"
     },
     {
         "id": "10",
@@ -257,7 +257,7 @@
             "Serve hot with rice."
         ],
         "cookingTime": 50,
-        "image": "https://example.com/images/menudo.jpg"
+        "image": "/recipes/menudo.jpeg"
     },
     {
         "id": "11",
@@ -281,7 +281,7 @@
             "Serve hot."
         ],
         "cookingTime": 45,
-        "image": "https://example.com/images/pinakbet.jpg"
+        "image": "/recipes/pinakbet.jpeg"
     },
     {
         "id": "12",
@@ -307,7 +307,7 @@
             "Serve hot."
         ],
         "cookingTime": 90,
-        "image": "https://example.com/images/pochero.jpg"
+        "image": "/recipes/pochero.jpeg"
     },
     {
         "id": "13",
@@ -330,7 +330,7 @@
             "Serve hot with rice."
         ],
         "cookingTime": 35,
-        "image": "https://example.com/images/tortang-talong.jpg"
+        "image": "/recipes/tortangtalong.jpeg"
     },
     {
         "id": "14",
@@ -355,7 +355,7 @@
             "Serve with calamansi and fried garlic."
         ],
         "cookingTime": 50,
-        "image": "https://example.com/images/arroz-caldo.jpg"
+        "image": "/recipes/arrozcaldo.jpeg"
     },
     {
         "id": "15",
@@ -378,7 +378,7 @@
             "Serve with sweet chili sauce."
         ],
         "cookingTime": 40,
-        "image": "https://example.com/images/lumpiang-shanghai.jpg"
+        "image": "/recipes/lumpiangshanghai.jpeg"
     },
     {
         "id": "16",
@@ -405,7 +405,7 @@
             "Serve hot with rice."
         ],
         "cookingTime": 35,
-        "image": "https://example.com/images/ginataang-hipon.jpg"
+        "image": "/recipes/ginataanghipon.jpeg"
     },
     {
         "id": "17",
@@ -428,7 +428,7 @@
             "Serve hot."
         ],
         "cookingTime": 120,
-        "image": "https://example.com/images/bulalo.jpg"
+        "image": "/recipes/bulalo.jpeg"
     },
     {
         "id": "18",
@@ -452,7 +452,7 @@
             "Serve hot with puto."
         ],
         "cookingTime": 60,
-        "image": "https://example.com/images/dinuguan.jpg"
+        "image": "/recipes/dinuguan.jpeg"
     },
     {
         "id": "19",
@@ -476,7 +476,7 @@
             "Top with cooked onion rings before serving."
         ],
         "cookingTime": 40,
-        "image": "https://example.com/images/bistek-tagalog.jpg"
+        "image": "/recipes/bistektagalog.jpeg"
     },
     {
         "id": "20",
@@ -502,6 +502,6 @@
             "Season with salt and pepper. Serve hot."
         ],
         "cookingTime": 45,
-        "image": "https://example.com/images/tinola.jpg"
+        "image": "/recipes/tinola.jpeg"
     }
 ]
