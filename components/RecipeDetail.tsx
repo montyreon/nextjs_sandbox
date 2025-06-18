@@ -16,7 +16,8 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }) => (
     <div
         style={{
             fontFamily: 'sans-serif',
-            transform: `rotate(${Math.random() * 2}deg)`,
+            // random tilt for a handmade effect
+            transform: `rotate(${((Math.random() < 0.5 ? -1 : 1) * (1 + Math.random())).toFixed(2)}deg)`,
             backgroundImage: 'url("/paper.webp")',
             backgroundRepeat: 'repeat',
             backgroundPosition: 'center'
