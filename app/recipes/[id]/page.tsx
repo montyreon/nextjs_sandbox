@@ -1,4 +1,5 @@
 import { Recipe } from "@/types/recipe";
+import RecipeDetail from "@/components/RecipeDetail";
 
 export default async function RecipePage({ params,
 }: {
@@ -20,41 +21,18 @@ export default async function RecipePage({ params,
     const recipe = (await res.json()) as Recipe;
 
     return (
-        <main className="flex min-h-screen flex-col items-center p-24 gap-8">
-            <h1 className="text-[3rem] font-bold text-white drop-shadow-lg">
-                {recipe.name}
-            </h1>
-            <div className="max-w-2xl w-full bg-white rounded-lg shadow-lg p-6">
-                <img
-                    src={'/recipes/placeholder.jpg'} // replace with recipe.image when available
-                    alt={recipe.name}
-                    className="w-full h-64 object-cover rounded-lg mb-4"
-                />
-                <p className="text-gray-700 mb-4">
-                    <strong>Cooking Time:</strong> {recipe.cookingTime} minutes
-                </p>
-                <h2 className="text-xl font-semibold mb-2">Ingredients</h2>
-                <ul className="list-disc list-inside mb-4">
-                    {recipe.ingredients.map((ingredient, idx) => (
-                        <li key={idx}>{ingredient}</li>
-                    ))}
-                </ul>
-                <h2 className="text-xl font-semibold mb-2">Instructions</h2>
-                <ol className="list-decimal list-inside">
-                    {recipe.instructions.map((step, idx) => (
-                        <li key={idx}>{step}</li>
-                    ))}
-                </ol>
-            </div>
-            <div className="mt-8">
+        <>
+            {/* Sticky Back to Recipes button */}
+            <div className="sticky top-0 z-50 flex justify-start w-full p-6">
                 <a
                     href="/"
-                    className="text-blue-500 hover:underline"
+                    className="px-4 py-2 bg-white rounded shadow"
                 >
-                    Back to Recipes
+                    Return
                 </a>
             </div>
-
-        </main>
+            {/* Recipe Detail Component */}
+            <RecipeDetail recipe={recipe} />
+        </>
     );
 }

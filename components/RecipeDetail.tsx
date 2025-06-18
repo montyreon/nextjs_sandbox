@@ -1,41 +1,54 @@
+import { Recipe } from "@/types/recipe";
+import Image from "next/image";
+import { Homemade_Apple } from 'next/font/google';
+
+const homemade = Homemade_Apple({
+    weight: '400',
+    subsets: ['latin'],
+    display: 'swap',
+});
+
 type RecipeDetailProps = {
-    id: string;
-    name: string;
-    ingredients: string[];
-    instructions: string[];
-    cookingTime: number;
-    image: string;
+    recipe: Recipe;
 };
 
-const RecipeDetail: React.FC<RecipeDetailProps> = ({
-    name,
-    ingredients,
-    instructions,
-    cookingTime,
-    image,
-}) => (
-    <div style={{ maxWidth: 600, margin: '0 auto', fontFamily: 'sans-serif' }}>
-        <h1>{name}</h1>
-        <img
-            src={image}
-            alt={name}
-            style={{ width: '100%', height: 'auto', borderRadius: 8, marginBottom: 16 }}
-        />
-        <p>
-            <strong>Cooking Time:</strong> {cookingTime} minutes
-        </p>
-        <h2>Ingredients</h2>
-        <ul>
-            {ingredients.map((ingredient, idx) => (
-                <li key={idx}>{ingredient}</li>
-            ))}
-        </ul>
-        <h2>Instructions</h2>
-        <ol>
-            {instructions.map((step, idx) => (
-                <li key={idx}>{step}</li>
-            ))}
-        </ol>
+const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }) => (
+    <div
+        style={{
+            fontFamily: 'sans-serif',
+            transform: `rotate(${Math.random() * 1.5}deg)`,
+            backgroundImage: 'url("/paper.webp")',
+            backgroundRepeat: 'repeat',
+            backgroundPosition: 'center'
+        }}
+        className="flex flex-col items-center mx-auto mb-20 max-w-[720px] rounded-xl py-12 px-8 shadow-lg"
+    >
+        <h1 className={`${homemade.className} text-[2rem] text-center font-bold text-slate-800`}>
+            {recipe.name}
+        </h1>
+        <div className="w-full max-w-2xl p-6 ">
+            <img
+                src={recipe.image || "/recipes/placeholder.jpg"}
+                alt={recipe.name}
+                className="object-cover w-full h-64 mb-4"
+            />
+            <p className="mb-4 text-gray-700">
+                <strong>Cooking Time:</strong> {recipe.cookingTime} minutes
+            </p>
+            <h2 className="mb-2 text-xl font-semibold">Ingredients</h2>
+            <ul className="mb-4 list-disc list-inside">
+                {recipe.ingredients.map((ingredient, idx) => (
+                    <li key={idx}>{ingredient}</li>
+                ))}
+            </ul>
+            <h2 className="mb-2 text-xl font-semibold">Instructions</h2>
+            <ol className="list-decimal list-inside">
+                {recipe.instructions.map((step, idx) => (
+                    <li key={idx}>{step}</li>
+                ))}
+            </ol>
+        </div>
+
     </div>
 );
 
