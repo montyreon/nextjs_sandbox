@@ -12,6 +12,12 @@ type RecipeDetailProps = {
     recipe: Recipe;
 };
 
+/**
+ * Displays detailed information about a recipe, including its image, cooking time, ingredients, and instructions.
+ * 
+ * @param {RecipeDetailProps} param0 - The props containing the recipe to display.
+ * @returns {JSX.Element} The rendered recipe detail component.
+ */
 const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }) => (
     <div
         style={{

@@ -7,6 +7,13 @@ interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
   showRadialGradient?: boolean;
 }
 
+/**
+ * AuroraBackground component creates a visually appealing background with an aurora effect.
+ * It can optionally show a radial gradient overlay.
+ *
+ * @param {AuroraBackgroundProps} props - The properties for the AuroraBackground component.
+ * @returns {JSX.Element} The rendered AuroraBackground component.
+ */
 export const AuroraBackground = ({
   className,
   children,
