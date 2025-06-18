@@ -3,7 +3,12 @@ import Image from 'next/image';
 import type { Recipe } from '../types/recipe';
 import { Timer } from 'lucide-react';
 
-// component that displays the recipe as a card preview
+/**
+ * RecipeCard component displays a recipe preview card with image, name, and cooking time.
+ * @param {Object} props
+ * @param {Recipe} props.recipe - The recipe data to display.
+ * @returns {JSX.Element} The rendered recipe card component.
+ */
 export default function RecipeCard({ recipe }: { recipe: Recipe }) {
     return (
         <Link
@@ -31,9 +36,14 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
                 <div className="p-4">
                     <h2 className="mb-2 text-xl font-semibold text-gray-800">{recipe.name}</h2>
                     <div className="flex items-center text-sm text-gray-600">
-                        <Timer size={20}/>
-                        <div className='w-1'/>
-                        <div className='!font-serif'>{recipe.cookingTime} mins</div>
+                        <Timer size={20} />
+                        <div className='w-1' />
+                        {/* conditional computation to indicate hrs or mins or both */}
+                        <div className='!font-serif'>
+                            {recipe.cookingTime >= 60
+                                ? `${Math.floor(recipe.cookingTime / 60)} hour${Math.floor(recipe.cookingTime / 60) > 1 ? 's' : ''}${recipe.cookingTime % 60 > 0 ? ` ${recipe.cookingTime % 60} min${recipe.cookingTime % 60 > 1 ? 's' : ''}` : ''}`
+                                : `${recipe.cookingTime} min${recipe.cookingTime > 1 ? 's' : ''}`}
+                        </div>
                     </div>
                 </div>
             </div>
