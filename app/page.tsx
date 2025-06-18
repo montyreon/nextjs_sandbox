@@ -2,7 +2,7 @@ import RecipeCard from "@/components/RecipeCard";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { Recipe } from "@/types/recipe";
 import { cn } from "@/lib/utils";
-import BackToTopButton from "@/components/BackToTopButton";
+import BackToTopButton from "@/components/ui/BackToTopButton";
 
 
 export default async function Home() {
