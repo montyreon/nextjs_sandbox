@@ -1,6 +1,8 @@
 import RecipeCard from "@/components/RecipeCard";
+import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { Recipe } from "@/types/recipe";
 import { Homemade_Apple } from 'next/font/google';
+import { cn } from "@/lib/utils";
 
 const homemade = Homemade_Apple({
   weight: '400',
@@ -23,12 +25,18 @@ export default async function Home() {
   const recipes = await res.json() as Recipe[];
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 gap-8">
-
-      <h1 className={`${homemade.className} font-bold text-[5rem] text-white drop-shadow-xl drop-shadow-black`}>
-        Ma, Anong Ulam?
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-12 w-max max-w-[95%]">
+    <main className="flex flex-col items-center min-h-screen">
+      <AuroraBackground>
+        <h1
+          className={cn(
+            `${homemade.className} font-bold text-center text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] drop-shadow-xl drop-shadow-black`,
+            "bg-[linear-gradient(120deg,#ffffff33_0%,#ffffffcc_50%,#ffffff33_100%)] bg-[length:200%_100%] bg-clip-text text-white animate-shimmer "
+          )}
+        >
+          Ma, Anong Ulam?
+        </h1>
+      </AuroraBackground>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-12 w-max max-w-[95%] lg:pt-0 p-12 md:p-16 lg:p-24">
         {/* map the fetched recipes as cards */
           recipes.map((recipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} />
