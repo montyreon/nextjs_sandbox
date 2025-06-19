@@ -1,40 +1,37 @@
 import recipes from "../../../data/recipes.json";
 
 export async function GET(request: Request) {
-  // destructure the URL and only get the search parameters
   const { searchParams } = new URL(request.url);
 
-  // apply filters only if there are parameters
-  if (searchParams.size > 0) {
-    const id = searchParams.get("id");
-    const name = searchParams.get("name");
+  const name = searchParams.get("name");
+  const cookingTime = searchParams.get("cookingTime");
 
-    // filter by id if it exists
-    if (id) {
-      const recipe = recipes.find((recipe) => recipe.id === id);
-      if (recipe) {
-        return Response.json(recipe);
-      } else {
-        return Response.json({ error: "Recipe not found" }, { status: 404 });
-      }
-    }
+  let filteredRecipes = recipes;
 
-    // filter by name if it exists
-    if (name) {
-      const filteredRecipes = recipes.filter((recipe) =>
-        recipe.name.toLowerCase().includes(name.toLowerCase())
+  // Filter by name if provided
+  if (name) {
+    filteredRecipes = filteredRecipes.filter((recipe) =>
+      recipe.name.toLowerCase().includes(name.toLowerCase())
+    );
+  }
+
+  // Filter by cooking time if provided
+  if (cookingTime) {
+    const maxTime = parseInt(cookingTime, 10);
+    if (!isNaN(maxTime)) {
+      filteredRecipes = filteredRecipes.filter(
+        (recipe) => recipe.cookingTime <= maxTime
       );
-      if (filteredRecipes.length > 0) {
-        return Response.json(filteredRecipes);
-      } else {
-        return Response.json(
-          { error: "No recipes found with that name" },
-          { status: 404 }
-        );
-      }
     }
   }
 
-  // if no filters, return all recipes
-  return Response.json(recipes);
+  // Return results or error
+  if (filteredRecipes.length > 0) {
+    return Response.json(filteredRecipes);
+  } else {
+    return Response.json(
+      { error: "No recipes matched your filters" },
+      { status: 404 }
+    );
+  }
 }
