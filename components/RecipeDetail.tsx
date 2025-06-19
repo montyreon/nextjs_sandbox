@@ -31,7 +31,7 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }: RecipeDetailProps
             backgroundRepeat: 'repeat',
             backgroundPosition: 'center'
         }}
-        className="flex flex-col items-center mx-auto mb-20 max-w-[80%] lg:max-w-[600px] w-max rounded-xl py-12 px-8 shadow-lg text-gray-700"
+        className="flex flex-col items-center mx-auto mb-20 max-w-[80%] lg:max-w-[600px] w-max rounded-xl py-8 px-2 lg:py-12 lg:px-8 shadow-lg text-gray-700"
     >
         {/* recipe title with custom font and bold styling */}
         <h1 className={`${homemade.className} text-[2rem] w-full font-bold px-10`}>
@@ -44,11 +44,11 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }: RecipeDetailProps
             alt={recipe.name}
             width={800}
             height={600}
-            className="mb-4 rounded-lg border-2 border-stone-400 shadow-sm"
+            className="mb-4 border-2 rounded-lg shadow-sm border-stone-400"
             style={{ width: '100%', height: 'auto', objectFit: 'cover', maxHeight: '400px' }}
             />
             {/* cooking time section with icon */}
-            <div className="mb-4 flex items-center text-gray-700">
+            <div className="flex items-center mb-4 text-gray-700">
             <strong className="mr-2">Cooking Time:</strong>
             <Timer size={20} />
             <div className='w-1' />
@@ -58,15 +58,15 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }: RecipeDetailProps
             </div>
             {/* ingredients list */}
             <h2 className="mb-2 text-xl font-semibold">Ingredients</h2>
-            <ul className="mb-4 pl-10 list-disc">
+            <ul className="pl-10 mb-4 list-disc">
             {recipe.ingredients.map((ingredient, idx) => (
                 <li key={idx}>{ingredient}</li>
             ))}
             </ul>
             {/* instructions section with steps */}
-            <div className="border-2 p-4 lg:p-8 border-stone-400 shadow-md">
+            <div className="p-4 border-2 shadow-md lg:p-8 border-stone-400">
             <h2 className="mb-2 text-xl font-semibold">Instructions</h2>
-            <ol className="list-decimal list-inside pl-6">
+            <ol className="pl-6 list-decimal list-inside">
                 {recipe.instructions.map((step, idx) => (
                 <li key={idx} className="mb-2">{step}</li>
                 ))}
