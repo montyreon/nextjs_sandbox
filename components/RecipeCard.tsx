@@ -4,6 +4,7 @@ import type { Recipe } from '../types/recipe';
 import { Timer } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useMemo } from 'react';
+import { formatCookingTime } from '@/lib/utils';
 
 // For better performance and readability, create the motion-wrapped component outside the main component.
 const MotionLink = motion(Link);
@@ -16,8 +17,8 @@ const MotionLink = motion(Link);
  * @returns {JSX.Element} The rendered recipe card component.
  */
 export default function RecipeCard({ recipe }: { recipe: Recipe }) {
-    // useMemo ensures that random transform values are generated only once per component instance.
-    // This prevents the card from jumping to a new position on every re-render.
+    
+    // memoized random position and rotation transforms, memoization helps avoid recalculating on every render
     const randomTransforms = useMemo(() => {
         const rotate = (Math.random() - 0.5) * 8; // Reduced rotation for a subtler effect
         const x = (Math.random() - 0.5) * 15;
@@ -28,16 +29,17 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
     return (
         <MotionLink
             href={`/recipes/${recipe.id}`}
-            // Initial state (before animation starts)
+            // initial state for the animation
             initial={{ opacity: 0, scale: 0.9, ...randomTransforms }}
-            // Animate to the final, stable random position
+            // animate to the final, stable random position
             animate={{ opacity: 1, scale: 1, ...randomTransforms }}
-            // Animate on hover
-            whileHover={{ scale: 1.05, y: randomTransforms.y - 10, rotate: randomTransforms.rotate - 1, zIndex: 10 }}
-            // Configure the physics of the animation
+            // animate on hover
+            whileHover={{ scale: 1.025, y: randomTransforms.y - 10, rotate: randomTransforms.rotate - 1, zIndex: 10 }}
+            // physics settings for the hover effect
             transition={{ type: "spring", damping: 15, stiffness: 100 }}
-            className="relative inline-block" // Use relative for zIndex on hover to work
+            className="relative inline-block" 
         >
+            {/* card preview of the recipe */}
             <div className="max-w-sm overflow-hidden transition-all duration-200 shadow-lg rounded-xl hover:shadow-yellow-200 hover:bg-white bg-white/80 hover:shadow-2xl hover:cursor-pointer">
                 <Image
                     className="object-cover w-full h-48"
@@ -54,9 +56,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
                         <div className='w-1' />
                         {/* conditional computation to indicate hrs or mins or both */}
                         <div className='!font-serif'>
-                            {recipe.cookingTime >= 60
-                                ? `${Math.floor(recipe.cookingTime / 60)} hour${Math.floor(recipe.cookingTime / 60) > 1 ? 's' : ''}${recipe.cookingTime % 60 > 0 ? ` ${recipe.cookingTime % 60} min${recipe.cookingTime % 60 > 1 ? 's' : ''}` : ''}`
-                                : `${recipe.cookingTime} min${recipe.cookingTime > 1 ? 's' : ''}`}
+                            {formatCookingTime(recipe.cookingTime)}
                         </div>
                     </div>
                 </div>

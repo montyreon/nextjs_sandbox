@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Homemade_Apple } from 'next/font/google';
 import { JSX } from "react";
 import { Timer } from "lucide-react";
+import { formatCookingTime } from "@/lib/utils";
 
 const homemade = Homemade_Apple({
     weight: '400',
@@ -44,7 +45,7 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }: RecipeDetailProps
             width={800}
             height={600}
             className="mb-4 rounded-lg border-2 border-stone-400 shadow-sm"
-            style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+            style={{ width: '100%', height: 'auto', objectFit: 'cover', maxHeight: '400px' }}
             />
             {/* cooking time section with icon */}
             <div className="mb-4 flex items-center text-gray-700">
@@ -52,9 +53,7 @@ const RecipeDetail: React.FC<RecipeDetailProps> = ({ recipe }: RecipeDetailProps
             <Timer size={20} />
             <div className='w-1' />
             <span className='!font-serif'>
-                {recipe.cookingTime >= 60
-                ? `${Math.floor(recipe.cookingTime / 60)} hour${Math.floor(recipe.cookingTime / 60) > 1 ? 's' : ''}${recipe.cookingTime % 60 > 0 ? ` ${recipe.cookingTime % 60} min${recipe.cookingTime % 60 > 1 ? 's' : ''}` : ''}`
-                : `${recipe.cookingTime} min${recipe.cookingTime > 1 ? 's' : ''}`}
+                {formatCookingTime(recipe.cookingTime)}
             </span>
             </div>
             {/* ingredients list */}
