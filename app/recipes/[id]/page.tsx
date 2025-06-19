@@ -26,7 +26,7 @@ export default async function RecipePage({ params,
             <div className="sticky top-0 z-50 flex justify-start w-full p-6">
                 <a
                     href="/"
-                    className="px-4 py-2 font-serif transition-colors duration-200 rounded shadow bg-white/80 hover:bg-white"
+                    className="px-4 py-2 text-black font-serif transition-colors duration-200 rounded shadow bg-white/80 hover:bg-white"
                 >
                     Return
                 </a>

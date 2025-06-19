@@ -48,19 +48,24 @@ export default function Home() {
         </h1>
       </AuroraBackground>
 
-        {/* Filtering Form */}
-      <Collapsible title={"try ko to"} children={<><Filter setFilters={setFilters} /></>}/>
-      
 
-      {/* Recipes Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-12 w-max max-w-[95%] !py-0 p-8 lg:pt-0 md:p-16 lg:p-24">
-        {fetchedRecipes.length > 0 ? (
-          fetchedRecipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))
-        ) : (
-          <p className="p-6 text-center text-gray-800 bg-white col-span-full rounded-xl drop-shadow-xl">Walang ganon, 'nak.</p>
-        )}
+      <div className='!py-0 p-8 lg:pt-0 md:p-16 lg:p-24 max-w-[95%] w-max'>
+
+
+        {/* Filtering Form */}
+        <Collapsible children={<><Filter setFilters={setFilters} /></>} />
+
+
+        {/* Recipes Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-12  ">
+          {fetchedRecipes.length > 0 ? (
+            fetchedRecipes.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))
+          ) : (
+            <p className="p-6 text-center text-gray-800 bg-white col-span-full rounded-xl drop-shadow-xl">Walang ganon, 'nak.</p>
+          )}
+        </div>
       </div>
 
       <BackToTopButton />

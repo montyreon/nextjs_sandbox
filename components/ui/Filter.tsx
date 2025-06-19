@@ -35,7 +35,7 @@ export function Filter({
     return (
         <form
             id="recipeFilterForm"
-            className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-[720px] px-4 py-8 font-serif text-black"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-[720px] px-4 pb-8 font-serif text-black"
             onSubmit={handleFilter}
         >
             {/* Search Name */}
@@ -77,12 +77,12 @@ export function Filter({
             <div className="flex justify-center col-span-1 gap-4 mt-2 sm:col-span-2">
                 {/* Filter Button */}
                 {/* white gold gradient */}
-                <button type="submit" className="px-4 py-2 text-white transition-all duration-200 rounded-lg shadow-lg bg-gradient-to-tr from-yellow-400 to-yellow-600 brightness-110 hover:brightness-[1.2]">
-                    Filter Recipes
+                <button type="submit" className="px-8 py-2 text-white transition-all duration-200 rounded-lg shadow-lg bg-gradient-to-tr from-yellow-400 to-yellow-600 brightness-110 hover:brightness-[1.2]">
+                    Filter
                 </button>
                 {/* Clear Button */}
-                <button type="button" onClick={clearFilters} className="px-4 py-2 text-white transition-all duration-200 rounded-lg shadow-lg bg-gray-300/75 hover:bg-gray-300">
-                    Clear Filters
+                <button type="button" onClick={clearFilters} className="px-4 py-2 text-white backdrop-blur-sm transition-all duration-200 rounded-lg shadow-lg bg-gray-300/75 hover:bg-gray-300">
+                    Clear
                 </button>
             </div>
         </form>)
