@@ -31,7 +31,7 @@ const Collapsible: React.FC<CollapsibleProps> = ({ children }) => {
   const baseButtonClasses = "transition-all duration-200 font-serif py-2 px-4 bg-white/80 backdrop-blur-sm text-gray-700 rounded-lg cursor-pointer card-title w-max flex justify-center items-center";
   const expandedClasses = isExpanded ? "brightness-110" : "";
 
-  const classes = `list-group-item ${isExpanded ? "is-expanded" : ""} w-full`;
+  const classes = `list-group-item ${isExpanded ? "is-expanded" : ""} w-full -translate-y-5`;
   const currentHeight = isExpanded ? height : 0;
 
   return (
