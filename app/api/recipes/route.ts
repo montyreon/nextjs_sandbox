@@ -11,6 +11,9 @@ export async function GET(request: Request) {
 
   let filteredRecipes: Recipe[] = recipes;
 
+  // simulated delay 
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
+
   // first evaluate if the request is for a specific recipe by ID
   // if so, we will return that recipe directly
   // otherwise, we will filter the recipes based on the provided parameters
