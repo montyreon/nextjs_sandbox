@@ -6,6 +6,7 @@ import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { Recipe } from "@/types/recipe";
 import BackToTopButton from "@/components/ui/BackToTopButton";
 import React, { useEffect, useState } from "react";
+import Collapsible from '@/components/ui/Collapsible';
 
 export default function Home() {
   const [fetchedRecipes, setFetchedRecipes] = useState<Recipe[]>([]);
@@ -15,7 +16,7 @@ export default function Home() {
     sortOrder?: string;
   }>({});
 
-  // Fetch on initial load and when filters are applied
+  // fetch recipes on initial load and when filters are applied
   useEffect(() => {
     const queryParams = new URLSearchParams();
     if (filters.name) queryParams.append("name", filters.name);
@@ -47,8 +48,9 @@ export default function Home() {
         </h1>
       </AuroraBackground>
 
-      {/* Filtering Form */}
-      <Filter setFilters={setFilters} />
+        {/* Filtering Form */}
+      <Collapsible title={"try ko to"} children={<><Filter setFilters={setFilters} /></>}/>
+      
 
       {/* Recipes Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-12 w-max max-w-[95%] !py-0 p-8 lg:pt-0 md:p-16 lg:p-24">

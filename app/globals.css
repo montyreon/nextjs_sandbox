@@ -22,3 +22,14 @@ body {
   background-position: center;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.list-group-item {
+  .card-title {
+    cursor: pointer;
+  }
+  .card-collapse {
+    overflow: hidden;
+    transition: height 0.5s ease-out;
+  }
+  h2 {margin-top: 5px !important;}
+}

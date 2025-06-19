@@ -32,38 +32,58 @@ export function Filter({
         setFilters({});
         (document.getElementById("recipeFilterForm") as HTMLFormElement)?.reset();
     };
-    return <form id="recipeFilterForm" className="flex flex-col items-center w-full max-w-xl px-4 font-serif text-black" onSubmit={handleFilter}>
-        <input type="text" name="searchName" placeholder="Search recipes by name..." className="w-full p-2 mt-8 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-        <select name="cookingTime" className="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="">Filter by cooking time</option>
-            <option value="15">Less than 15 minutes</option>
-            <option value="30">Less than 30 minutes</option>
-            <option value="60">Less than 1 hour</option>
-            <option value="120">Less than 2 hours</option>
-        </select>
+    return (
+        <form
+            id="recipeFilterForm"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-[720px] px-4 py-8 font-serif text-black"
+            onSubmit={handleFilter}
+        >
+            {/* Search Name */}
+            <input
+                type="text"
+                name="searchName"
+                placeholder="Ano gusto mo..."
+                className="w-full col-span-1 p-2 border border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm sm:col-span-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
 
-        <select name="sortOrder" className="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="">Sort by...</option>
-            <option value="az">Alphabetical (A–Z)</option>
-            <option value="za">Alphabetical (Z–A)</option>
-            <option value="cookLowHigh">Cooking Time: Low to High</option>
-            <option value="cookHighLow">Cooking Time: High to Low</option>
-        </select>
+            {/* (Optional) Empty div to align buttons properly on smaller screens */}
+            <div className="block sm:hidden" />
 
-        {
-            /* Buttons */
-        }
-        <div className="flex gap-4 mb-8">
-            <button type="submit">
-                <span className="inline-block px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600">
+            {/* Cooking Time */}
+            <select
+                name="cookingTime"
+                className="w-full p-2 text-black border border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+                <option value="">Cooking time...</option>
+                <option value="15">Less than 15 minutes</option>
+                <option value="30">Less than 30 minutes</option>
+                <option value="60">Less than 1 hour</option>
+                <option value="120">Less than 2 hours</option>
+            </select>
+
+            {/* Sort Order */}
+            <select
+                name="sortOrder"
+                className="w-full p-2 text-black border border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+                <option value="">Sort by...</option>
+                <option value="az">Alphabetical (A–Z)</option>
+                <option value="za">Alphabetical (Z–A)</option>
+                <option value="cookLowHigh">Cooking Time: Low to High</option>
+                <option value="cookHighLow">Cooking Time: High to Low</option>
+            </select>
+
+            {/* Button Row */}
+            <div className="flex justify-center col-span-1 gap-4 mt-2 sm:col-span-2">
+                {/* Filter Button */}
+                {/* white gold gradient */}
+                <button type="submit" className="px-4 py-2 text-white transition-all duration-200 rounded-lg shadow-lg bg-gradient-to-tr from-yellow-400 to-yellow-600 brightness-110 hover:brightness-[1.2]">
                     Filter Recipes
-                </span>
-            </button>
-            <button type="button" onClick={clearFilters}>
-                <span className="inline-block px-4 py-2 text-white bg-gray-500 rounded-lg hover:bg-gray-600">
+                </button>
+                {/* Clear Button */}
+                <button type="button" onClick={clearFilters} className="px-4 py-2 text-white transition-all duration-200 rounded-lg shadow-lg bg-gray-300/75 hover:bg-gray-300">
                     Clear Filters
-                </span>
-            </button>
-        </div>
-    </form>;
+                </button>
+            </div>
+        </form>)
 }
