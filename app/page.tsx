@@ -48,13 +48,15 @@ export default function Home() {
 
   return (
     <main className="relative flex flex-col items-center min-h-screen">
+      
+      {/* title and annimated background */}
       <AuroraBackground>
         <h1 className="text-4xl font-bold text-center text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
           Ma, Anong Ulam?
         </h1>
       </AuroraBackground>
 
-
+      {/* main content area */}
       <div className='!py-0 p-8 lg:pt-0 md:p-16 lg:p-24 max-w-[95%] w-full'>
         {/* filtering form */}
         <Collapsible children={<><Filter setFilters={setFilters} /></>} />
