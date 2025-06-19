@@ -7,6 +7,7 @@ import { Recipe } from "@/types/recipe";
 import BackToTopButton from "@/components/ui/BackToTopButton";
 import React, { useEffect, useState } from "react";
 import Collapsible from '@/components/ui/Collapsible';
+import SkeletonCard from "@/components/SkeletonCard";
 
 export default function Home() {
   const [fetchedRecipes, setFetchedRecipes] = useState<Recipe[]>([]);
@@ -16,7 +17,9 @@ export default function Home() {
     sortOrder?: string;
   }>({});
 
-  // fetch recipes on initial load and when filters are applied
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // fetch recipes when filters change; also on initial load
   useEffect(() => {
     const queryParams = new URLSearchParams();
     if (filters.name) queryParams.append("name", filters.name);
@@ -24,6 +27,7 @@ export default function Home() {
     if (filters.sortOrder) queryParams.append("sortOrder", filters.sortOrder);
 
     const fetchRecipes = async () => {
+      setLoading(true); // start loading
       try {
         const res = await fetch(`/api/recipes?${queryParams.toString()}`, {
           cache: "no-store",
@@ -34,6 +38,8 @@ export default function Home() {
       } catch (err) {
         console.error("Fetch failed:", err);
         setFetchedRecipes([]);
+      } finally {
+        setLoading(false); // end loading
       }
     };
 
@@ -49,21 +55,23 @@ export default function Home() {
       </AuroraBackground>
 
 
-      <div className='!py-0 p-8 lg:pt-0 md:p-16 lg:p-24 max-w-[95%] w-max'>
-
-
-        {/* Filtering Form */}
+      <div className='!py-0 p-8 lg:pt-0 md:p-16 lg:p-24 max-w-[95%] w-full'>
+        {/* filtering form */}
         <Collapsible children={<><Filter setFilters={setFilters} /></>} />
 
 
-        {/* Recipes Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-12  ">
-          {fetchedRecipes.length > 0 ? (
+        {/* recipes grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-12 ">
+          {loading ? (
+            Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
+          ) : fetchedRecipes.length > 0 ? (
             fetchedRecipes.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))
           ) : (
-            <p className="p-6 text-center text-gray-800 bg-white col-span-full rounded-xl drop-shadow-xl">Walang ganon, 'nak.</p>
+            <p className="p-6 text-center text-gray-800 bg-white col-span-full rounded-xl drop-shadow-xl">
+              Walang ganon, 'nak.
+            </p>
           )}
         </div>
       </div>
