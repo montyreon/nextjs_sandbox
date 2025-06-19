@@ -13,6 +13,8 @@ interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
  *
  * @param {AuroraBackgroundProps} props - The properties for the AuroraBackground component.
  * @returns {JSX.Element} The rendered AuroraBackground component.
+ * 
+ * Base code adapted from Aceternity UI.
  */
 export const AuroraBackground = ({
   className,

@@ -5,11 +5,19 @@ interface CollapsibleProps {
   children: ReactNode;
 }
 
+/**
+ * Collapsible component that toggles visibility of its children with animation.
+ *
+ * @param {Object} props
+ * @param {React.ReactNode} props.children - Content to be shown or hidden inside the collapsible. Expected to be the filtering form for this application.
+ * @returns {JSX.Element} The rendered collapsible component.
+ */
 const Collapsible: React.FC<CollapsibleProps> = ({ children }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [height, setHeight] = useState<number>(0);
   const ref = useRef<HTMLDivElement>(null);
 
+  
   const handleToggle = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsExpanded((prev) => !prev);
@@ -18,7 +26,7 @@ const Collapsible: React.FC<CollapsibleProps> = ({ children }) => {
     }
   };
 
-  // Collapse on window resize
+  // collapse on window resize
   useEffect(() => {
     const handleResize = () => {
       setIsExpanded(false);
@@ -36,7 +44,8 @@ const Collapsible: React.FC<CollapsibleProps> = ({ children }) => {
 
   return (
     <div className={classes}>
-      <div className="mb-4 lg:mb-8 flex justify-end w-full">
+      <div className="flex justify-end w-full mb-4 lg:mb-8">
+        {/* button to toggle visibility */}
         <button className={`${baseButtonClasses} ${expandedClasses}`} onClick={handleToggle}>
           {isExpanded ? "Hide Filters" : "Ako gusto ko..."}
           <span className="ml-2">
@@ -44,11 +53,12 @@ const Collapsible: React.FC<CollapsibleProps> = ({ children }) => {
           </span>
         </button>
       </div>
+      {/* main content */}
       <div
         className="card-collapse"
         style={{ height: `${currentHeight}px`, overflow: "hidden", transition: "height 0.3s ease" }}
       >
-        <div className="card-body flex justify-center" ref={ref}>
+        <div className="flex justify-center card-body" ref={ref}>
           {children}
         </div>
       </div>

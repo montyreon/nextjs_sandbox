@@ -2,16 +2,23 @@
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
 
+/**
+ * BackToTopButton component provides a button to scroll back to the top of the page.
+ * It becomes visible when the user scrolls down more than 200 pixels.
+ *
+ * @returns {JSX.Element} The rendered BackToTopButton component.
+ */
 export default function BackToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
+  // control visibility based on scroll position, must be 200px or more to show the button
   useEffect(() => {
     const toggleVisibility = () => {
       setIsVisible(window.scrollY > 200);
     };
 
     window.addEventListener("scroll", toggleVisibility);
-    toggleVisibility(); // ✅ check immediately on mount
+    toggleVisibility(); 
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
