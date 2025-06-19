@@ -1,45 +1,69 @@
-"use client";
 import React from "react";
 
-export function Filter() {
+/**
+ * Filter component for recipes.
+ * Allows users to filter recipes by name, cooking time, and sort order.
+ * @param setFilters - Function to update the filters state.
+ */
+export function Filter({
+    setFilters,
+}: {
+    setFilters: React.Dispatch<React.SetStateAction<{
+        name?: string;
+        cookingTime?: string;
+        sortOrder?: string;
+    }>>;
+}) {
     const handleFilter = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // set the form values to the web parameters
         const formData = new FormData(e.currentTarget);
-        const name = formData.get("name") as string;
-        const cookingTime = formData.get("cookingTime") as string;
-        // construct the URL with the parameters
-        const params = new URLSearchParams();
-        if (typeof name === "string" && name.trim() !== "") {
-            params.append("name", name)
-        }
-        if (typeof cookingTime === "string" && cookingTime.trim() !== "") {
-            params.append("cookingTime", cookingTime)
-        }
-        // redirect to the recipes page with the parameters
-        window.location.href = `?${params.toString()}`;
-    }
+        const name = formData.get("searchName")?.toString().trim();
+        const cookingTime = formData.get("cookingTime")?.toString().trim();
+        const sortOrder = formData.get("sortOrder")?.toString().trim();
 
-    return <form className="font-serif text-black" onSubmit={handleFilter}>
-        {
-            /* name input */
-        }
-        <input type="text" name="name" placeholder="Search recipes by name..." className="w-full max-w-md p-2 mt-8 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-        {
-            /* filter by cooking time */
-        }
-        <select name="cookingTime" className="w-full max-w-md p-2 mb-8 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        setFilters({
+            name: name || undefined,
+            cookingTime: cookingTime || undefined,
+            sortOrder: sortOrder || undefined,
+        });
+    };
+
+    const clearFilters = () => {
+        setFilters({});
+        (document.getElementById("recipeFilterForm") as HTMLFormElement)?.reset();
+    };
+    return <form id="recipeFilterForm" className="flex flex-col items-center w-full max-w-xl px-4 font-serif text-black" onSubmit={handleFilter}>
+        <input type="text" name="searchName" placeholder="Search recipes by name..." className="w-full p-2 mt-8 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <select name="cookingTime" className="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="">Filter by cooking time</option>
             <option value="15">Less than 15 minutes</option>
             <option value="30">Less than 30 minutes</option>
             <option value="60">Less than 1 hour</option>
             <option value="120">Less than 2 hours</option>
         </select>
-        <button type="submit">
-            <span className="inline-block px-4 py-2 text-white transition-colors bg-blue-500 rounded-lg hover:bg-blue-600">
-                Filter Recipes
-            </span>
-        </button>
+
+        <select name="sortOrder" className="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="">Sort by...</option>
+            <option value="az">Alphabetical (A–Z)</option>
+            <option value="za">Alphabetical (Z–A)</option>
+            <option value="cookLowHigh">Cooking Time: Low to High</option>
+            <option value="cookHighLow">Cooking Time: High to Low</option>
+        </select>
+
+        {
+            /* Buttons */
+        }
+        <div className="flex gap-4 mb-8">
+            <button type="submit">
+                <span className="inline-block px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600">
+                    Filter Recipes
+                </span>
+            </button>
+            <button type="button" onClick={clearFilters}>
+                <span className="inline-block px-4 py-2 text-white bg-gray-500 rounded-lg hover:bg-gray-600">
+                    Clear Filters
+                </span>
+            </button>
+        </div>
     </form>;
 }
-
