@@ -48,7 +48,7 @@ export default function Home() {
 
   return (
     <main className="relative flex flex-col items-center min-h-screen">
-      
+
       {/* title and annimated background */}
       <AuroraBackground>
         <h1 className="text-4xl font-bold text-center text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
@@ -57,7 +57,7 @@ export default function Home() {
       </AuroraBackground>
 
       {/* main content area */}
-      <div className='!py-0 p-8 lg:pt-0 md:p-16 lg:p-24 max-w-[95%] w-full'>
+      <div className='!py-0 p-8 lg:pt-0 md:p-16 lg:p-24 max-w-[95%] xl:max-w-[1080px] w-full'>
         {/* filtering form */}
         <Collapsible children={<><Filter setFilters={setFilters} /></>} />
 
@@ -71,9 +71,11 @@ export default function Home() {
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))
           ) : (
-            <p className="p-6 text-center text-gray-800 bg-white col-span-full rounded-xl drop-shadow-xl">
+            <div className="flex justify-center items-center w-full col-span-full">
+              <p className="p-6 text-center text-white text-3xl rounded-xl drop-shadow-lg">
               Walang ganon, 'nak.
-            </p>
+              </p>
+            </div>
           )}
         </div>
       </div>
