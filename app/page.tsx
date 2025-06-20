@@ -3,48 +3,21 @@
 import { Filter } from './../components/ui/Filter';
 import RecipeCard from "@/components/RecipeCard";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
-import { Recipe } from "@/types/recipe";
 import BackToTopButton from "@/components/ui/BackToTopButton";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Collapsible from '@/components/ui/Collapsible';
 import SkeletonCard from "@/components/SkeletonCard";
+import { useRecipes } from '@/hooks/useRecipes';
 
 export default function Home() {
-  const [fetchedRecipes, setFetchedRecipes] = useState<Recipe[]>([]);
   const [filters, setFilters] = useState<{
     name?: string;
     cookingTime?: string;
     sortOrder?: string;
   }>({});
 
-  const [loading, setLoading] = useState<boolean>(true);
-
-  // fetch recipes when filters change; also on initial load
-  useEffect(() => {
-    const queryParams = new URLSearchParams();
-    if (filters.name) queryParams.append("name", filters.name);
-    if (filters.cookingTime) queryParams.append("cookingTime", filters.cookingTime);
-    if (filters.sortOrder) queryParams.append("sortOrder", filters.sortOrder);
-
-    const fetchRecipes = async () => {
-      setLoading(true); // start loading
-      try {
-        const res = await fetch(`/api/recipes?${queryParams.toString()}`, {
-          cache: "no-store",
-        });
-
-        const data = await res.json();
-        setFetchedRecipes(res.ok ? data : []);
-      } catch (err) {
-        console.error("Fetch failed:", err);
-        setFetchedRecipes([]);
-      } finally {
-        setLoading(false); // end loading
-      }
-    };
-
-    fetchRecipes();
-  }, [filters]);
+  // custom hook to fetch recipes based on filters
+  const { recipes: fetchedRecipes = [], loading } = useRecipes(filters);
 
   return (
     <main className="relative flex flex-col items-center min-h-screen">
@@ -61,19 +34,18 @@ export default function Home() {
         {/* filtering form */}
         <Collapsible children={<><Filter setFilters={setFilters} /></>} />
 
-
         {/* recipes grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-12 ">
           {loading ? (
             Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
-          ) : fetchedRecipes.length > 0 ? (
+          ) : Array.isArray(fetchedRecipes) && fetchedRecipes.length > 0 ? (
             fetchedRecipes.map((recipe) => (
               <RecipeCard key={recipe.id} recipe={recipe} />
             ))
           ) : (
             <div className="flex justify-center items-center w-full col-span-full">
               <p className="p-6 text-center text-white text-3xl rounded-xl drop-shadow-lg">
-              Walang ganon, 'nak.
+                Walang ganon, 'nak.
               </p>
             </div>
           )}
