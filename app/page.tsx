@@ -32,7 +32,9 @@ export default function Home() {
       {/* main content area */}
       <div className='!py-0 p-8 lg:pt-0 md:p-16 lg:p-24 max-w-[95%] xl:max-w-[1080px] w-full'>
         {/* filtering form */}
-        <Collapsible children={<><Filter setFilters={setFilters} /></>} />
+        <Collapsible >
+          <Filter setFilters={setFilters} />
+        </Collapsible>
 
         {/* recipes grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 xl:gap-12 ">
