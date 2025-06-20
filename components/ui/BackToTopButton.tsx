@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 /**
  * BackToTopButton component provides a button to scroll back to the top of the page.
@@ -18,7 +19,7 @@ export default function BackToTopButton() {
     };
 
     window.addEventListener("scroll", toggleVisibility);
-    toggleVisibility(); 
+    toggleVisibility();
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
@@ -29,9 +30,10 @@ export default function BackToTopButton() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-4 right-4 z-50 p-3 rounded-full bg-white hover:opacity-100 text-black shadow-xl transition-opacity duration-300 ${
+      className={cn(
+        "fixed bottom-4 right-4 z-50 p-3 rounded-full bg-white hover:opacity-100 text-black shadow-xl transition-opacity duration-300",
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-      }`}
+      )}
       aria-label="Back to top"
     >
       <ChevronUp className="w-6 h-6" />
