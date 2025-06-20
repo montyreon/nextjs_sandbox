@@ -1,7 +1,7 @@
 "use client"
-import React, { useState, useEffect } from "react";
-import { cn } from "@/lib/utils"; 
-
+import React, { useState } from "react";
+import { cn } from "@/lib/utils";
+import SelectInput from "./SelectInput";
 /**
  * Filter component for recipes.
  * Allows users to filter recipes by name, cooking time, and sort order.
@@ -75,32 +75,33 @@ export function Filter({
                 onChange={(e) => setNameInput(e.target.value)}
                 className="w-full col-span-1 p-2 rounded-lg bg-white/80 backdrop-blur-sm sm:col-span-2 focus:outline-none focus:ring-2 ring-offset-2 focus:ring-yellow-400 overflow-visible"
             />
-            <select
+            {/* Custom Select component for both cooking time and sort order */}
+            <SelectInput
                 name="cookingTime"
                 value={cookingTimeInput}
                 onChange={(e) => setCookingTimeInput(e.target.value)}
-                className="w-full p-2 text-black rounded-lg bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            >
-                <option value="">Cooking time...</option>
-                <option value="15">Less than 15 minutes</option>
-                <option value="30">Less than 30 minutes</option>
-                <option value="60">Less than 1 hour</option>
-                <option value="120">Less than 2 hours</option>
-            </select>
+                options={[
+                    { value: "", label: "Cooking time..." },
+                    { value: "15", label: "Less than 15 minutes" },
+                    { value: "30", label: "Less than 30 minutes" },
+                    { value: "60", label: "Less than 1 hour" },
+                    { value: "120", label: "Less than 2 hours" },
+                ]}
+            />
 
             {/* sorting */}
-            <select
+            <SelectInput
                 name="sortOrder"
                 value={sortOrderInput}
                 onChange={(e) => setSortOrderInput(e.target.value)}
-                className="w-full p-2 text-black rounded-lg bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            >
-                <option value="">Sort by...</option>
-                <option value="az">Alphabetical (A–Z)</option>
-                <option value="za">Alphabetical (Z–A)</option>
-                <option value="cookLowHigh">Cooking Time: Low to High</option>
-                <option value="cookHighLow">Cooking Time: High to Low</option>
-            </select>
+                options={[
+                    { value: "", label: "Sort by..." },
+                    { value: "az", label: "Alphabetical (A–Z)" },
+                    { value: "za", label: "Alphabetical (Z–A)" },
+                    { value: "cookLowHigh", label: "Cooking Time: Low to High" },
+                    { value: "cookHighLow", label: "Cooking Time: High to Low" },
+                ]}
+            />
 
             {/* filter apply and clear buttons */}
             <div className="flex justify-center col-span-1 gap-2 mt-2 sm:col-span-2">
@@ -111,7 +112,7 @@ export function Filter({
                     className={cn(
                         "px-8 py-2 text-white transition-all duration-200 rounded-lg shadow-lg bg-gradient-to-bl from-yellow-400 to-yellow-600 brightness-125",
                         "disabled:opacity-60 disabled:cursor-not-allowed disabled:brightness-110",
-                         isFilterEnabled && "hover:brightness-[1.2]"
+                        isFilterEnabled && "hover:brightness-[1.2]"
                     )}
                 >
                     Filter
