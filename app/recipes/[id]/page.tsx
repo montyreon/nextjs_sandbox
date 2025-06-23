@@ -3,7 +3,8 @@ import RecipeDetail from "@/components/RecipeDetail";
 import Link from "next/link";
 
 
-export default async function RecipePage({ params,
+export default async function RecipePage({
+    params,
 }: {
     params: { id: string };
 }) {
