@@ -4,7 +4,6 @@ import { Homemade_Apple } from 'next/font/google';
 import { JSX } from "react";
 import { Timer } from "lucide-react";
 import { formatCookingTime } from "@/lib/utils";
-import { div } from "framer-motion/client";
 
 const homemade = Homemade_Apple({
     weight: '400',

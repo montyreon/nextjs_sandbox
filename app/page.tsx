@@ -47,7 +47,7 @@ export default function Home() {
           ) : (
             <div className="flex justify-center items-center w-full col-span-full">
               <p className="p-6 text-center text-white text-3xl rounded-xl drop-shadow-lg">
-                Walang ganon, 'nak.
+                Walang ganon, &apos;nak.
               </p>
             </div>
           )}
