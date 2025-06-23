@@ -7,7 +7,7 @@ export default async function RecipePage({ params,
 }: {
     params: { id: string };
 }) {
-    const { id } = await params;
+    const { id } = params;
 
     // fetch the recipe from the recipes api route
     const res = await fetch(`http://localhost:3000/api/recipes?id=${id}`, {
